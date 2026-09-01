@@ -32,11 +32,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-    
+ 
+      - name: Set lowercase repo owner
+        run: echo "OWNER_LC=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV 
+   
       - name: Build Docker image
-        run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/w7-app:latest .
+        run: docker build -t ghcr.io/${{ env.OWNER_LC }}/w7-app:latest .
 
       - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ github.repository_owner }}/w7-app:latest
+        run: docker push ghcr.io/${{ env.OWNER_LC }}/w7-app:latest
