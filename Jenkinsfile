@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
+                checkout scm
             }
         }
 
@@ -18,12 +18,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building application...'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application...'
             }
         }
     }
