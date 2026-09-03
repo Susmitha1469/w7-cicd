@@ -11,6 +11,8 @@ pipeline {
 
         stage('Test') {
             steps {
+                sh 'pwd'
+                sh 'ls -la'
                 echo 'Running tests...'
             }
         }
