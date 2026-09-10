@@ -2,17 +2,10 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = 'ghcr.io/Susmitha1469/week7-app:latest'
+        IMAGE = 'ghcr.io/YOUR_GITHUB_USERNAME/week7-app:latest'
     }
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                echo 'Checking out source code...'
-                checkout scm
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
