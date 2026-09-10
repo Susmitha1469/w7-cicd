@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = 'ghcr.io/YOUR_GITHUB_USERNAME/week7-app:latest'
+        IMAGE = 'ghcr.io/Susmitha1469/week7-app:latest'
     }
 
     stages {
